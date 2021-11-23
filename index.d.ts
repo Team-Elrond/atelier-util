@@ -31,5 +31,7 @@ declare module 'express-serve-static-core' {
         bodyString(key: string, fallback?: string): string;
         paramString(key: string, fallback?: string): string;
         queryString(key: string, fallback?: string): string;
+
+        bodyBoolean(key: string, fallback?: boolean): boolean;
     }
 }

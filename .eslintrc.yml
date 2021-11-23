@@ -62,6 +62,7 @@ rules:
   - array: false
   prefer-template: off
   quote-props: off
+  valid-typeof: off
   vars-on-top: off
 
   import/no-named-as-default: off
