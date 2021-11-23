@@ -1,6 +1,6 @@
 {
     "name": "@atelier/util",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "./lib/index.js",
     "types": "./index.d.ts",
     "repository": "https://github.com/team-elrond/atelier-util.git",

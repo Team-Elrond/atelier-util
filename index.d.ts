@@ -2,7 +2,7 @@ import * as http from 'http';
 import { ParamsDictionary } from 'express-serve-static-core';
 import { ParsedQs } from 'qs';
 
-declare module 'react' {
+declare module 'express' {
     /**
      * @param P  For most requests, this should be `ParamsDictionary`, but if you're
      * using this in a route handler for a route that uses a `RegExp` or a wildcard
