@@ -1,21 +1,16 @@
 import * as http from 'http';
 import { ParamsDictionary } from 'express-serve-static-core';
+import { NextFunction, Request, Response } from 'express';
 import { ParsedQs } from 'qs';
+import { Client, Submittable } from 'pg';
+
+export function asyncTry(func: (req: Request, res: Response) => Promise<void>): (req: Request, res: Response, next: NextFunction) => void;
+
+export function requestParser(req: Request, res: Response, next: NextFunction): void;
+
+export function tryPut(conn: Client, res: Response, query: Submittable): void;
 
 declare module 'express-serve-static-core' {
-    /**
-     * @param P  For most requests, this should be `ParamsDictionary`, but if you're
-     * using this in a route handler for a route that uses a `RegExp` or a wildcard
-     * `string` path (e.g. `'/user/*'`), then `req.params` will be an array, in
-     * which case you should use `ParamsArray` instead.
-     *
-     * @see https://expressjs.com/en/api.html#req.params
-     *
-     * @example
-     *     app.get('/user/:id', (req, res) => res.send(req.params.id)); // implicitly `ParamsDictionary`
-     *     app.get<ParamsArray>(/user\/(.*)/, (req, res) => res.send(req.params[0]));
-     *     app.get<ParamsArray>('/user/*', (req, res) => res.send(req.params[0]));
-     */
     export interface Request<
         P = ParamsDictionary,
         ResBody = any,
